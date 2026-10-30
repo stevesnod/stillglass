@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Stillglass",
+  "version": "1.0.0",
+  "description": "Zoom photos, brighten and tune them, and reverse-search a picture or video frame on Google Lens, TinEye, Yandex, and Bing.",
+  "minimum_chrome_version": "120",
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage", "clipboardWrite"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_title": "Stillglass",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "open-loupe": {
+      "suggested_key": { "default": "Alt+Shift+L" },
+      "description": "Open the loupe on the picture under your pointer"
+    },
+    "grab-frame": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Grab the current video frame"
+    }
+  }
+}
