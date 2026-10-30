@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Stillglass",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Zoom photos, brighten and tune them, and reverse-search a picture or video frame on Google Lens, TinEye, Yandex, and Bing.",
   "minimum_chrome_version": "120",
-  "permissions": ["contextMenus", "activeTab", "scripting", "storage", "clipboardWrite"],
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage", "clipboardWrite", "downloads"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "action": {
     "default_title": "Stillglass",
